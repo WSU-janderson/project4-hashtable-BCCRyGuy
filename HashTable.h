@@ -27,9 +27,7 @@ class HashTable {
  * unsucessful, such as when a duplicate is attempted to be inserted, the method
  * should return false
  */
- bool insert(const std::string& key, const size_t& value) {
-
- }
+ bool insert(const std::string& key, const size_t& value);
  /**
  * If the key is in the table, remove will “erase” the key-value pair from the
  * table. This might just be marking a bucket as empty-after-remove
@@ -39,7 +37,7 @@ class HashTable {
  * contains returns true if the key is in the table and false if the key is not in
  * the table.
  */
- bool contains(const string& key) const;
+ bool contains(const std::string& key) const;
 /**
  * If the key is found in the table, find will return the value associated with
  * that key. If the key is not in the table, find will return something called
@@ -49,7 +47,7 @@ class HashTable {
  * signify the return value is invalid. It's also much better than throwing an
  * exception if the key is not found.
  */
- std::optional<size_t> get(const string& key) const;
+ std::optional<size_t> get(const std::string& key) const;
 /**
  * The bracket operator lets us access values in the map using a familiar syntax,
  * similar to C++ std::map or Python dictionaries. It behaves like get, returnin
@@ -64,7 +62,7 @@ class HashTable {
  * results in undefined behavior. Simply put, you do not need to address attempts
  * to access keys not in the table inside the bracket operator method.
  */
- size_t& operator[](const string& key);
+ size_t& operator[](const std::string& key);
 
 /**
  * keys returns a std::vector (C++ version of ArrayList, or simply list/array)
