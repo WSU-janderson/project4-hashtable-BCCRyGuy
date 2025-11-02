@@ -30,6 +30,11 @@ class HashTableBucket {
     * instead.
     */
     friend std::ostream& operator<<(std::ostream& os, const HashTableBucket& bucket);
+
+    private:
+    std::string key;
+    size_t value;
+    BucketType type;
 };
 
 
