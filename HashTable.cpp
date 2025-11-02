@@ -7,7 +7,17 @@
 
 // default constructor with given capacity and 0 elements
 HashTable::HashTable(size_t initCapacity) : tableData(initCapacity), numElements(0) {
+    // fill ofsets with 1, 2, ... , N-1
+    for (size_t i = 1; i < initCapacity; i++) {
+        offsets.push_back(i);
+    }
 
+    // shuffle offsets
+    for (size_t i = 0; i < offsets.size(); i++) {
+        // arbitrary fixed formula for swaping
+        size_t j = (i * 7 + 1) % offsets.size();
+        std::swap(offsets[i], offsets[j]);
+    }
 }
 
 bool HashTable::insert(const std::string &key, const size_t &value) {
