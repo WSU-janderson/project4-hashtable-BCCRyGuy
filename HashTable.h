@@ -20,9 +20,7 @@ class HashTable {
  * necessary. If no capacity is given, it defaults to 8 initially
  */
 
- HashTable::HashTable(size_t initCapacity = 8) {
-
- }
+ HashTable(size_t initCapacity = 8);
 /**
  * Insert a new key-value pair into the table. Duplicate keys are NOT allowed. The
  * method should return true if the insertion was successful. If the insertion was
