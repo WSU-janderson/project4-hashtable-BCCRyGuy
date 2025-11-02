@@ -100,6 +100,9 @@ private:
 
  // number of key-value pairs in table
  size_t numElements;
+
+ // resize member function
+ void resize();
 };
 
 #endif // HASHTABLE_H
