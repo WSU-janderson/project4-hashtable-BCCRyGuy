@@ -27,6 +27,12 @@ bool HashTableBucket::isEmpty() const {
 }
 
 std::ostream & operator<<(std::ostream &os, const HashTableBucket &bucket) {
-
+    if (bucket.type == BucketType::NORMAL) {
+        os << "Key: " << bucket.key << " Value: " << bucket.value << std::endl;
+    } else if (bucket.type == BucketType::ESS) {
+        os << "Empty Since Start" << std::endl;
+    } else {
+        os << "Empty After Remove" << std::endl;
+    }
     return os;
 }
