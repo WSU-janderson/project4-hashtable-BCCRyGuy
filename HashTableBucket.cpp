@@ -21,4 +21,7 @@ void HashTableBucket::load(const std::string &k, const size_t &v) {
     type = BucketType::NORMAL;
 }
 
-
+// check if empty (ESS or EAR)
+bool HashTableBucket::isEmpty() const {
+    return type != BucketType::NORMAL;
+}
