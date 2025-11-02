@@ -26,6 +26,7 @@ bool HashTableBucket::isEmpty() const {
     return type != BucketType::NORMAL;
 }
 
+// overload operator<< for printing
 std::ostream & operator<<(std::ostream &os, const HashTableBucket &bucket) {
     if (bucket.type == BucketType::NORMAL) {
         os << "Key: " << bucket.key << " Value: " << bucket.value << std::endl;
