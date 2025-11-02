@@ -1,6 +1,6 @@
 /**
  * HashTableDebug.cpp
- *
+ * Rylan Cheetham
  * Write your tests in this file
  */
 #include <iostream>
