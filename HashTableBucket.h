@@ -24,11 +24,8 @@ class HashTableBucket {
 
     // check if empty (ESS or EAR)
     bool isEmpty() const;
-    /**
-    * The stream insertion operator could be overloaded to print the
-    * bucket's contents. Or if preferred, you could write a print method
-    * instead.
-    */
+
+    // overload operator<< to print bucket contents
     friend std::ostream& operator<<(std::ostream& os, const HashTableBucket& bucket);
 
     private:
