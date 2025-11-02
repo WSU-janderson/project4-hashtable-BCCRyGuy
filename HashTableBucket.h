@@ -25,6 +25,10 @@ class HashTableBucket {
     // check if empty (ESS or EAR)
     bool isEmpty() const;
 
+    std::string getKey() const {
+        return key;
+    }
+
     // overload operator<< to print bucket contents
     friend std::ostream& operator<<(std::ostream& os, const HashTableBucket& bucket);
 

@@ -12,10 +12,18 @@ HashTable::HashTable(size_t initCapacity) : tableData(initCapacity), numElements
 
 bool HashTable::insert(const std::string &key, const size_t &value) {
     size_t maxBuckets = tableData.size();
-    size_t index = std::hash<std::string>()(key) % maxBuckets;
+    size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
 
-    for (size_t i = 0; i < maxBuckets; i++) {
+    // check if first bucket is empty
+    if (tableData[homeIndex].isEmpty()) {
+        tableData[homeIndex].load(key, value);
+        numElements++;
+        return true;
+    }
 
+    // check for duplicate
+    if (!tableData[homeIndex].isEmpty() && tableData[homeIndex].getKey() == key) {
+        return false;
     }
 }
 
