@@ -14,3 +14,11 @@ HashTableBucket::HashTableBucket(const std::string &k, const size_t &v) : key(k)
 
 }
 
+// load key value into bucket and mark as NORMAL
+void HashTableBucket::load(const std::string &k, const size_t &v) {
+    key = k;
+    value = v;
+    type = BucketType::NORMAL;
+}
+
+
