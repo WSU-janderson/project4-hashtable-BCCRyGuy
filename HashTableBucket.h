@@ -12,6 +12,7 @@
 enum class BucketType {NORMAL, ESS, EAR};
 
 class HashTableBucket {
+    public:
     // default constructor
     HashTableBucket();
     // parameterized constructor
