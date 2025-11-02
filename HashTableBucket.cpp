@@ -25,3 +25,8 @@ void HashTableBucket::load(const std::string &k, const size_t &v) {
 bool HashTableBucket::isEmpty() const {
     return type != BucketType::NORMAL;
 }
+
+std::ostream & operator<<(std::ostream &os, const HashTableBucket &bucket) {
+
+    return os;
+}
