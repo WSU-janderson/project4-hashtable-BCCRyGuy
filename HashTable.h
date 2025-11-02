@@ -29,21 +29,21 @@ class HashTable {
  * unsucessful, such as when a duplicate is attempted to be inserted, the method
  * should return false
  */
- bool HashTable::insert(const std::string& key, const size_t& value) {
+ bool insert(const std::string& key, const size_t& value) {
 
  }
  /**
  * If the key is in the table, remove will “erase” the key-value pair from the
  * table. This might just be marking a bucket as empty-after-remove
  */
- bool HashTable::remove(const std::string& key) {
+ bool remove(const std::string& key) {
 
  }
  /**
  * contains returns true if the key is in the table and false if the key is not in
  * the table.
  */
- bool HashTable::contains(const string& key) const {
+ bool contains(const string& key) const {
 
  }
 /**
@@ -55,7 +55,7 @@ class HashTable {
  * signify the return value is invalid. It's also much better than throwing an
  * exception if the key is not found.
  */
- std::optional<size_t> HashTable::get(const string& key) const {
+ std::optional<size_t> get(const string& key) const {
 
  }
 /**
@@ -72,7 +72,7 @@ class HashTable {
  * results in undefined behavior. Simply put, you do not need to address attempts
  * to access keys not in the table inside the bracket operator method.
  */
- size_t& HashTable::operator[](const string& key) {
+ size_t& operator[](const string& key) {
 
  }
 
@@ -81,7 +81,7 @@ class HashTable {
  * with all of the keys currently in the table. The length of the vector should be
  * the same as the size of the hash table.
  */
-std::vector<std::string> HashTable::keys() const {
+std::vector<std::string> keys() const {
 
  }
 /**
@@ -93,14 +93,14 @@ std::vector<std::string> HashTable::keys() const {
 The time complexity
 * for this method must be O(1).
 */
-double HashTable::alpha() const {
+double alpha() const {
 
  }
 /**
 * capacity returns how many buckets in total are in the hash table. The time
 * complexity for this algorithm must be O(1).
 */
-size_t HashTable::capacity() const {
+size_t capacity() const {
 
  }
 
@@ -108,7 +108,7 @@ size_t HashTable::capacity() const {
 * The size method returns how many key-value pairs are in the hash table. The
 * time complexity for this method must be O(1)
 */
-size_t HashTable::size() const {
+size_t size() const {
 
  }
 
