@@ -95,6 +95,9 @@ private:
  // table data member
  std::vector<HashTableBucket> tableData;
 
+ // vector for pseudo-random probing
+ std::vector<size_t> offsets;
+
  // number of key-value pairs in table
  size_t numElements;
 };
