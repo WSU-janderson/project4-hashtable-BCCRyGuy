@@ -5,7 +5,8 @@
 
 #include "HashTable.h"
 
-HashTable::HashTable(size_t initCapacity) {
+// default constructor with given capacity and 0 elements
+HashTable::HashTable(size_t initCapacity) : tableData(initCapacity), numElements(0) {
 
 }
 
