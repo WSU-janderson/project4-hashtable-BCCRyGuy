@@ -11,7 +11,12 @@ HashTable::HashTable(size_t initCapacity) : tableData(initCapacity), numElements
 }
 
 bool HashTable::insert(const std::string &key, const size_t &value) {
+    size_t maxBuckets = tableData.size();
+    size_t index = std::hash<std::string>()(key) % maxBuckets;
 
+    for (size_t i = 0; i < maxBuckets; i++) {
+
+    }
 }
 
 bool HashTable::remove(const std::string &key) {
