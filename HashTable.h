@@ -29,7 +29,7 @@ class HashTable {
  * unsucessful, such as when a duplicate is attempted to be inserted, the method
  * should return false
  */
- bool HashTable::insert(const std::string$ key, const size_t& value) {
+ bool HashTable::insert(const std::string& key, const size_t& value) {
 
  }
  /**
