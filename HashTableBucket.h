@@ -9,16 +9,12 @@
 #include <string>
 #include <iostream>
 
+enum class BucketType {NORMAL, ESS, EAR};
+
 class HashTableBucket {
-    /**
-    * The default constructor can simply set the bucket type to ESS.
-    *
-    */
+    // default constructor
     HashTableBucket();
-    /**
-    * A parameterized constructor could initialize the key and value, as
-    * well as set the bucket type to NORMAL.
-    */
+    // parameterized constructor
     HashTableBucket(const std::string& key, const size_t& value);
     /**
     * A load method could load the key-value pair into the bucket, which
