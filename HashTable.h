@@ -11,6 +11,8 @@
 #include <optional>
 #include <iostream>
 
+#include "HashTableBucket.h"
+
 class HashTable {
  public:
 
@@ -89,6 +91,12 @@ size_t capacity() const;
 */
 size_t size() const;
 
+private:
+ // table data member
+ std::vector<HashTableBucket> tableData;
+
+ // number of key-value pairs in table
+ size_t numElements;
 };
 
 #endif // HASHTABLE_H
