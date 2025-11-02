@@ -15,11 +15,8 @@ class HashTable {
  public:
 
 // core methods and functions
-/**
- * Only a single constructor that takes an initial capacity for the table is
- * necessary. If no capacity is given, it defaults to 8 initially
- */
 
+ // default constructor (default capacity 8)
  HashTable(size_t initCapacity = 8);
 /**
  * Insert a new key-value pair into the table. Duplicate keys are NOT allowed. The

@@ -5,6 +5,10 @@
 
 #include "HashTable.h"
 
+HashTable::HashTable(size_t initCapacity) {
+
+}
+
 bool HashTable::insert(const std::string &key, const size_t &value) {
 
 }
