@@ -14,17 +14,37 @@ bool HashTable::insert(const std::string &key, const size_t &value) {
     size_t maxBuckets = tableData.size();
     size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
 
-    // check if first bucket is empty
+    // check if home bucket is empty
     if (tableData[homeIndex].isEmpty()) {
         tableData[homeIndex].load(key, value);
         numElements++;
         return true;
     }
 
-    // check for duplicate
+    // check for duplicate at home
     if (!tableData[homeIndex].isEmpty() && tableData[homeIndex].getKey() == key) {
         return false;
     }
+
+    // probe using offset sequence
+    for (size_t offset : offsets) {
+        size_t bucketIndex = (homeIndex + offset) % maxBuckets;
+
+        // check if empty
+        if (tableData[bucketIndex].isEmpty()) {
+            tableData[bucketIndex].load(key, value);
+            numElements++;
+            return true;
+        }
+
+        // check for duplicate
+        if (tableData[bucketIndex].getKey() == key) {
+            return false;
+        }
+    }
+
+    // (temporary) Table full
+    return false;
 }
 
 bool HashTable::remove(const std::string &key) {
