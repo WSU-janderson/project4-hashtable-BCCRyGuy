@@ -3,6 +3,16 @@
  * Rylan Cheetham
  */
 
+#ifndef HASHTABLE_H
+#define HASHTABLE_H
+
+#include <string>
+#include <vector>
+#include <optional>
+#include <iostream>
+
+class HashTable {
+ public:
 
 // core methods and functions
 /**
@@ -101,3 +111,8 @@ size_t HashTable::capacity() const {
 size_t HashTable::size() const {
 
  }
+
+};
+
+#endif // HASHTABLE_H
+
