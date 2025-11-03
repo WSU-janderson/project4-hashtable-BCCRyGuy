@@ -54,9 +54,10 @@ bool HashTable::insert(const std::string &key, const size_t &value) {
     }
 
     // if table is full, resize
-    if (alpha() >= 0.5) {
-        resize();
-    }
+    //if (alpha() >= 0.5) {
+    //    resize();
+    //}
+    return false;
 }
 
 bool HashTable::remove(const std::string &key) {
