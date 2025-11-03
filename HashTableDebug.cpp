@@ -19,6 +19,7 @@ int main() {
     // print buckets
     std::cout << "Current Table" << std::endl;
     for (size_t i = 0; i < testTable.capacity(); i++) {
+        // tabledata temporarily moved to public for test
         std::cout << "Bucket " << i << ": " << testTable.tableData[i];
     }
 
