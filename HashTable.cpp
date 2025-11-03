@@ -75,6 +75,26 @@ bool HashTable::remove(const std::string &key) {
         numElements--;
         return true;
     }
+
+    // probe through offsets
+    for (size_t offset : offsets) {
+        size_t bucketIndex = (homeIndex + offset) % maxBuckets;
+
+        // stop early if hitting ESS
+        if (tableData[bucketIndex].isEmptySinceStart()) {
+            return false;
+        }
+
+        // key found
+        if (tableData[bucketIndex].getKey() == key) {
+            tableData[bucketIndex].setEmptyAfterRemove();
+            numElements--;
+            return true;
+        }
+    }
+
+    // not found
+    return false;
 }
 
 bool HashTable::contains(const std::string &key) const {
