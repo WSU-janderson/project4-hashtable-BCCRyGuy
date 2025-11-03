@@ -7,7 +7,7 @@
 
 // default constructor with given capacity and 0 elements
 HashTable::HashTable(size_t initCapacity) : tableData(initCapacity), numElements(0) {
-    // fill ofsets with 1, 2, ... , N-1
+    // fill offsets with 1, 2, ... , N-1
     for (size_t i = 1; i < initCapacity; i++) {
         offsets.push_back(i);
     }
