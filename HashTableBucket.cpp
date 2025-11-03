@@ -26,10 +26,12 @@ bool HashTableBucket::isEmpty() const {
     return type != BucketType::NORMAL;
 }
 
+// check if ESS
 bool HashTableBucket::isEmptySinceStart() const {
     return type == BucketType::ESS;
 }
 
+// check if EAR
 bool HashTableBucket::isEmptyAfterRemove() const {
     return type == BucketType::EAR;
 }
