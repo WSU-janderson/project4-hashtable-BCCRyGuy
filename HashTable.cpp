@@ -81,7 +81,7 @@ std::vector<std::string> HashTable::keys() const {
 }
 
 double HashTable::alpha() const {
-
+    return static_cast<double>(numElements) / (tableData.size());
 }
 
 size_t HashTable::capacity() const {
