@@ -87,9 +87,9 @@ bool HashTable::contains(const std::string &key) const {
             return true;
         }
 
-        // key is not found
-        return false;
     }
+    // key is not found
+    return false;
 }
 
 std::optional<size_t> HashTable::get(const std::string &key) const {
