@@ -174,7 +174,21 @@ size_t & HashTable::operator[](const std::string &key) {
 }
 
 std::vector<std::string> HashTable::keys() const {
+    // vector to store keys
+    std::vector<std::string> keys;
+    keys.reserve(numElements);
 
+    // check all buckets for keys
+    for (const HashTableBucket& bucket : tableData) {
+        // only include buckets with NORMAL type
+        if (!bucket.isEmpty()) {
+            // store key in vector
+            keys.push_back(bucket.getKey());
+        }
+    }
+
+    // return the vector with all keys
+    return keys;
 }
 
 double HashTable::alpha() const {
