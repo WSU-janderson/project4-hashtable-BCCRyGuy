@@ -38,6 +38,9 @@ class HashTableBucket {
 
     void setEmptyAfterRemove();
 
+    // reference to value for bracket operator
+    size_t& valueReference();
+
     // overload operator<< to print bucket contents
     friend std::ostream& operator<<(std::ostream& os, const HashTableBucket& bucket);
 

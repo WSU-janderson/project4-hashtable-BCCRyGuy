@@ -42,6 +42,10 @@ void HashTableBucket::setEmptyAfterRemove() {
     type = BucketType::EAR;
 }
 
+size_t & HashTableBucket::valueReference() {
+    return value;
+}
+
 // overload operator<< for printing
 std::ostream & operator<<(std::ostream &os, const HashTableBucket &bucket) {
     if (bucket.type == BucketType::NORMAL) {

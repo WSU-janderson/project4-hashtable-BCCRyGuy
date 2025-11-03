@@ -154,7 +154,23 @@ std::optional<size_t> HashTable::get(const std::string &key) const {
 }
 
 size_t & HashTable::operator[](const std::string &key) {
+    size_t maxBuckets = tableData.size();
+    size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
 
+    // check home bucket
+    if (tableData[homeIndex].getKey() == key) {
+        return tableData[homeIndex].valueReference();
+    }
+
+    // probe through offsets
+    for (size_t offset : offsets) {
+        size_t bucketIndex = (homeIndex + offset) % maxBuckets;
+        if (tableData[bucketIndex].getKey() == key) {
+            return tableData[bucketIndex].valueReference();
+        }
+    }
+
+    // key not found return nothing
 }
 
 std::vector<std::string> HashTable::keys() const {
