@@ -28,6 +28,9 @@ class HashTableBucket {
     std::string getKey() const {
         return key;
     }
+    size_t getValue() const {
+        return value;
+    }
 
     // overload operator<< to print bucket contents
     friend std::ostream& operator<<(std::ostream& os, const HashTableBucket& bucket);
