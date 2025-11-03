@@ -92,7 +92,20 @@ size_t HashTable::size() const {
 
 }
 
+// simply double the size of the table if it is full
 void HashTable::resize() {
+    size_t oldCapacity = tableData.size();
+    size_t newCapacity = oldCapacity * 2;
+
+    // save old table
+    std::vector<HashTableBucket> oldTable = tableData;
+
+    // Resize tableData with empty buckets
+    tableData.clear();
+    tableData.resize(newCapacity);
+
+    // reset number of elements temporarily
+    numElements = 0;
 
 }
 
