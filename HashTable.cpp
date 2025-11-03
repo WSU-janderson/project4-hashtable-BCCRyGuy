@@ -85,11 +85,11 @@ double HashTable::alpha() const {
 }
 
 size_t HashTable::capacity() const {
-
+    return tableData.size();
 }
 
 size_t HashTable::size() const {
-
+    return numElements;
 }
 
 // simply double the size of the table if it is full
