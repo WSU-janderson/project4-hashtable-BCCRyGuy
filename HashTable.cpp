@@ -66,6 +66,9 @@ bool HashTable::insert(const std::string &key, const size_t &value) {
 }
 
 bool HashTable::remove(const std::string &key) {
+    size_t maxBuckets = tableData.size();
+    size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
+
 
 }
 
