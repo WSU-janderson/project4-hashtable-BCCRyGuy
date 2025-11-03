@@ -17,10 +17,17 @@ int main() {
     testTable.insert("Mumford", 891);
 
     // print buckets
-    std:: cout << "Buckets after insertion:" << std::endl;
-    for (size_t i = 0; i < 8; i++ ) {
-        // table data moved to public temporarily
+    std::cout << "Current Table" << std::endl;
+    for (size_t i = 0; i < testTable.capacity(); i++) {
         std::cout << "Bucket " << i << ": " << testTable.tableData[i];
     }
+
+    std::cout << std::endl;
+    std::cout << "Table Info" << std::endl;
+    std::cout << "Size: " << testTable.size() << std::endl;
+    std::cout << "Capacity: " << testTable.capacity() << std::endl;
+    std::cout << "Alpha: " << testTable.alpha() << std::endl;
+
+
     return 0;
 }
