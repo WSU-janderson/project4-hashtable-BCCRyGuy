@@ -95,6 +95,13 @@ bool HashTable::contains(const std::string &key) const {
 }
 
 std::optional<size_t> HashTable::get(const std::string &key) const {
+    size_t maxBuckets = tableData.size();
+    size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
+
+    // check home bucket
+    if (!tableData[homeIndex].isEmpty() && tableData[homeIndex].getKey() == key) {
+        return tableData[homeIndex].getValue();
+    }
 
 }
 
