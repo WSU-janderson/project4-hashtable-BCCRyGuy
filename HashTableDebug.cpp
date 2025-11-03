@@ -29,6 +29,47 @@ int main() {
     std::cout << "Capacity: " << testTable.capacity() << std::endl;
     std::cout << "Alpha: " << testTable.alpha() << std::endl;
 
+    // test get() function
+    std::optional<size_t> val = testTable.get("Greg");
+    if (val.has_value()) {
+        std::cout << std::endl;
+        std::cout << "Greg found: " << val.value() << std::endl;
+    } else {
+        std::cout << std::endl;
+        std::cout << "Greg not found" << std::endl;
+    }
+
+    // test remove
+    std::cout << std::endl;
+    std::cout << "Removing Greg..." << std::endl;
+
+    if (testTable.remove("Greg")) {
+        std::cout << "Greg removed" << std::endl;
+    } else {
+        std::cout << "Failed to remove Greg" << std::endl;
+    }
+
+    // check get after remove
+    val = testTable.get("Greg");
+    if (val.has_value()) {
+        std::cout << "Greg found after remove: " << val.value() << std::endl;
+    } else {
+        std::cout << "Greg not found after remove" << std::endl;
+    }
+
+
+    // insert new key to test EAR
+    std::cout << std::endl;
+    std::cout << "Inserting Cedric..." << std::endl;
+    testTable.insert("Cedric", 555);
+
+
+    // print final table
+    std::cout << std::endl;
+    std::cout << "Table after remove and insert:" << std::endl;
+    for (size_t i = 0; i < testTable.capacity(); i++) {
+        std::cout << "Bucket " << i << ": " << testTable.tableData[i];
+    }
 
     return 0;
 }
