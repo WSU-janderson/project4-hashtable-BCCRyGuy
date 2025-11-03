@@ -65,7 +65,31 @@ bool HashTable::remove(const std::string &key) {
 }
 
 bool HashTable::contains(const std::string &key) const {
+    size_t maxBuckets = tableData.size();
+    size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
 
+    // check home bucket first
+    if (!tableData[homeIndex].isEmpty() && tableData[homeIndex].getKey() == key) {
+        return true;
+    }
+
+    // probe through offsets
+    for (size_t offset : offsets) {
+        size_t bucketIndex = (homeIndex + offset) % maxBuckets;
+
+        // stop early if ESS bucket is reached
+        if (tableData[bucketIndex].isEmpty()) {
+            return false;
+        }
+
+        // if key is found
+        if (tableData[bucketIndex].getKey() == key) {
+            return true;
+        }
+
+        // key is not found
+        return false;
+    }
 }
 
 std::optional<size_t> HashTable::get(const std::string &key) const {
