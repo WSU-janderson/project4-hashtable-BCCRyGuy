@@ -31,9 +31,15 @@ bool HashTableBucket::isEmptySinceStart() const {
     return type == BucketType::ESS;
 }
 
-// check if EAR
+// check if EAR (just in case)
 bool HashTableBucket::isEmptyAfterRemove() const {
     return type == BucketType::EAR;
+}
+
+void HashTableBucket::setEmptyAfterRemove() {
+    key = "EMPTY_AFTER_REMOVE";
+    value = 0;
+    type = BucketType::EAR;
 }
 
 // overload operator<< for printing

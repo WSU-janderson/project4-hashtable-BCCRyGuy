@@ -69,7 +69,12 @@ bool HashTable::remove(const std::string &key) {
     size_t maxBuckets = tableData.size();
     size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
 
-
+    // check home bucket
+    if (tableData[homeIndex].getKey() == key) {
+        tableData[homeIndex].setEmptyAfterRemove();
+        numElements--;
+        return true;
+    }
 }
 
 bool HashTable::contains(const std::string &key) const {

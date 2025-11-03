@@ -36,6 +36,8 @@ class HashTableBucket {
 
     bool isEmptyAfterRemove() const;
 
+    void setEmptyAfterRemove();
+
     // overload operator<< to print bucket contents
     friend std::ostream& operator<<(std::ostream& os, const HashTableBucket& bucket);
 
