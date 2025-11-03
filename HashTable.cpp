@@ -103,6 +103,8 @@ std::optional<size_t> HashTable::get(const std::string &key) const {
         return tableData[homeIndex].getValue();
     }
 
+    // not found
+    return std::nullopt;
 }
 
 size_t & HashTable::operator[](const std::string &key) {
