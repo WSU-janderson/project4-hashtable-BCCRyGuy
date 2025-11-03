@@ -21,6 +21,12 @@ HashTable::HashTable(size_t initCapacity) : tableData(initCapacity), numElements
 }
 
 bool HashTable::insert(const std::string &key, const size_t &value) {
+    // if table is full, resize before inserting
+    if (alpha() >= 0.5) {
+        resize();
+    }
+
+
     size_t maxBuckets = tableData.size();
     size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
 
@@ -32,7 +38,7 @@ bool HashTable::insert(const std::string &key, const size_t &value) {
     }
 
     // check for duplicate at home
-    if (!tableData[homeIndex].isEmpty() && tableData[homeIndex].getKey() == key) {
+    if (tableData[homeIndex].getKey() == key) {
         return false;
     }
 
@@ -53,10 +59,7 @@ bool HashTable::insert(const std::string &key, const size_t &value) {
         }
     }
 
-    // if table is full, resize
-    if (alpha() >= 0.5) {
-        resize();
-    }
+
 
     // table full or slot not found
     return false;
@@ -71,7 +74,7 @@ bool HashTable::contains(const std::string &key) const {
     size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
 
     // check home bucket first
-    if (!tableData[homeIndex].isEmpty() && tableData[homeIndex].getKey() == key) {
+    if (tableData[homeIndex].getKey() == key) {
         return true;
     }
 
@@ -99,7 +102,7 @@ std::optional<size_t> HashTable::get(const std::string &key) const {
     size_t homeIndex = std::hash<std::string>()(key) % maxBuckets;
 
     // check home bucket
-    if (!tableData[homeIndex].isEmpty() && tableData[homeIndex].getKey() == key) {
+    if (tableData[homeIndex].getKey() == key) {
         return tableData[homeIndex].getValue();
     }
 
