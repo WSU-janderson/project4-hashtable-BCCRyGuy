@@ -16,6 +16,12 @@ int main() {
     testTable.insert("Greg", 237);
     testTable.insert("Mumford", 891);
 
+    // test bracket operator function
+    std::cout << "Rylan before update: " << testTable["Rylan"] << std::endl;
+    testTable["Rylan"] = 999;
+    std::cout << "Rylan after update: " << testTable["Rylan"] << std::endl;
+    std::cout << std::endl;
+
     // print buckets
     std::cout << "Current Table" << std::endl;
     for (size_t i = 0; i < testTable.capacity(); i++) {
