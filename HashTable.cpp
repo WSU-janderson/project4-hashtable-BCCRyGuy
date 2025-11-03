@@ -107,5 +107,16 @@ void HashTable::resize() {
     // reset number of elements temporarily
     numElements = 0;
 
+    // Recreate offsets for new capacity
+    offsets.clear();
+    for (size_t i = 1; i < newCapacity; i++) {
+        offsets.push_back(i);
+    }
+    // Shuffle offsets (same deterministic formula)
+    for (size_t i = 0; i < offsets.size(); i++) {
+        size_t j = (i * 7 + 1) % offsets.size();
+        std::swap(offsets[i], offsets[j]);
+    }
+
 }
 
