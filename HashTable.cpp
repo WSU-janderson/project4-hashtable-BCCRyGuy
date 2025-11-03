@@ -103,6 +103,21 @@ std::optional<size_t> HashTable::get(const std::string &key) const {
         return tableData[homeIndex].getValue();
     }
 
+    // probe through offsets
+    for (size_t offset : offsets) {
+        size_t bucketIndex = (homeIndex + offset) % maxBuckets;
+
+        // stop probing when hitting ESS bucket
+        if (tableData[bucketIndex].isEmptySinceStart()) {
+            return std::nullopt;
+        }
+
+        // get the value stored in the bucket
+        if (tableData[bucketIndex].getKey() == key) {
+            return tableData[bucketIndex].getValue();
+        }
+    }
+
     // not found
     return std::nullopt;
 }
