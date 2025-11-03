@@ -118,5 +118,11 @@ void HashTable::resize() {
         std::swap(offsets[i], offsets[j]);
     }
 
+    // Reinsert old key-value pairs into new table
+    for (const auto& bucket : oldTable) {
+        if (!bucket.isEmpty()) {
+            insert(bucket.getKey(), bucket.getValue());
+        }
+    }
 }
 
