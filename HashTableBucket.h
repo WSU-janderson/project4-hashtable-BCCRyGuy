@@ -32,6 +32,10 @@ class HashTableBucket {
         return value;
     }
 
+    bool isEmptySinceStart() const;
+
+    bool isEmptyAfterRemove() const;
+
     // overload operator<< to print bucket contents
     friend std::ostream& operator<<(std::ostream& os, const HashTableBucket& bucket);
 

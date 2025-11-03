@@ -26,6 +26,14 @@ bool HashTableBucket::isEmpty() const {
     return type != BucketType::NORMAL;
 }
 
+bool HashTableBucket::isEmptySinceStart() const {
+    return type == BucketType::ESS;
+}
+
+bool HashTableBucket::isEmptyAfterRemove() const {
+    return type == BucketType::EAR;
+}
+
 // overload operator<< for printing
 std::ostream & operator<<(std::ostream &os, const HashTableBucket &bucket) {
     if (bucket.type == BucketType::NORMAL) {
