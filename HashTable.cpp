@@ -58,6 +58,8 @@ bool HashTable::insert(const std::string &key, const size_t &value) {
         resize();
     }
 
+    // table full or slot not found
+    return false;
 }
 
 bool HashTable::remove(const std::string &key) {
