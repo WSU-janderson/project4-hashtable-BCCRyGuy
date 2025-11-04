@@ -16,6 +16,7 @@ add_executable(HashTableTests
         HashTable.cpp
         HashTable.h
         HashTableBucket.h
+        HashTableBucket.cpp
 )
 
 # Make SequenceDebug the default startup target
