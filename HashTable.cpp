@@ -1,6 +1,11 @@
 /**
  * HashTable.cpp
  * Rylan Cheetham
+ * CS 3100
+ * Project 4 Hash Table
+ *
+ * Implementation of HashTable class methods
+ * insert, remove, contains, etc.
  */
 
 #include "HashTable.h"

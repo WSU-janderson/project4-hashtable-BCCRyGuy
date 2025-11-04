@@ -1,6 +1,11 @@
 /**
  * HashTableBucket.cpp
  * Rylan Cheetham
+ * CS 3100
+ * Project 4 Hash Table
+ *
+ * Implementation of HashTableBucket class
+ * has constructors, getters, setters, and prints buckets
  */
 
 #include "HashTableBucket.h"

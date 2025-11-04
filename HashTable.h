@@ -1,6 +1,11 @@
 /**
  * HashTable.h
  * Rylan Cheetham
+ * CS 3100
+ * Project 4 Hash Table
+ *
+ * Declaration of HashTable class
+ * uses basic operations: insert, remove, contains, get, etc.
  */
 
 #ifndef HASHTABLE_H

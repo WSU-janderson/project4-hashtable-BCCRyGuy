@@ -1,6 +1,12 @@
 /**
  * HashTableBucket.h
  * Rylan Cheetham
+ * CS 3100
+ * Project 4 Hash Table
+ *
+ * Declaration of HashTableBucket class
+ * Represents single bucket in hash table
+ * tracks key, value, bucket type
  */
 
 #ifndef HASHTABLE_HASHTABLEBUCKET_H
