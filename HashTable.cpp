@@ -170,7 +170,8 @@ size_t & HashTable::operator[](const std::string &key) {
         }
     }
 
-    // key not found return nothing
+    // key not found return home bucket
+    return tableData[0].valueReference();
 }
 
 std::vector<std::string> HashTable::keys() const {
