@@ -91,6 +91,8 @@ size_t capacity() const;
 */
 size_t size() const;
 
+ friend std::ostream& operator<<(std::ostream& os, const HashTable& table);
+
 private:
  // table data member
  std::vector<HashTableBucket> tableData;

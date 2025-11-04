@@ -170,8 +170,15 @@ size_t & HashTable::operator[](const std::string &key) {
         }
     }
 
-    // key not found return home bucket
-    return tableData[0].valueReference();
+    // key not found return nothing
+
+}
+
+std::ostream& operator<<(std::ostream& os, const HashTable& table) {
+    for (size_t i = 0; i < table.tableData.size(); i++) {
+        os << "Bucket " << i << ": " << table.tableData[i] << std::endl;
+    }
+    return os;
 }
 
 std::vector<std::string> HashTable::keys() const {
