@@ -171,7 +171,7 @@ size_t & HashTable::operator[](const std::string &key) {
     }
 
     // key not found return nothing
-
+    return tableData[homeIndex].valueReference();
 }
 
 std::ostream& operator<<(std::ostream& os, const HashTable& table) {
